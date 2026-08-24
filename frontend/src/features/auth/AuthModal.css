@@ -1,0 +1,64 @@
+.auth-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 22, 31, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  animation: auth-overlay-fade-in 0.15s ease-out;
+}
+
+@keyframes auth-overlay-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.auth-modal-wrap {
+  position: relative;
+  animation: auth-modal-pop-in 0.18s cubic-bezier(0.2, 0.8, 0.3, 1.2);
+}
+
+@keyframes auth-modal-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.auth-modal-card {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.auth-modal-close {
+  position: absolute;
+  top: -0.6rem;
+  right: -0.6rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  border: 2px solid var(--gold);
+  font-size: 1.3rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.auth-modal-close:hover {
+  background: var(--coral);
+  border-color: var(--coral);
+}

@@ -1,0 +1,129 @@
+.events-page {
+  min-height: 100vh;
+  padding: 2rem 1.5rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.events-header {
+  margin-bottom: 2rem;
+}
+
+.events-logo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.events-header h1 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.01em;
+  color: var(--paper);
+}
+
+.events-status {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.events-status.error {
+  color: var(--coral);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.events-search {
+  margin-top: 1rem;
+  max-width: 480px;
+}
+
+.events-search input {
+  width: 100%;
+  padding: 0.7rem 0.9rem 0.7rem 2.6rem;
+  border: 1.5px solid var(--ink-light);
+  border-radius: 4px;
+  background: var(--ink-light) url("/lupa.svg") no-repeat left 0.85rem center;
+  background-size: 16px 16px;
+  color: var(--paper);
+  font-size: 0.9rem;
+}
+
+.events-search input::placeholder {
+  color: var(--muted);
+}
+
+.events-search input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.events-search button {
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.events-search button:hover {
+  background: var(--gold-dark);
+  color: var(--paper);
+}
+
+.events-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+
+.events-page-number,
+.events-page-arrow {
+  min-width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  border: 1.5px solid var(--ink-light);
+  background: transparent;
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.events-page-number:hover,
+.events-page-arrow:hover:not(:disabled) {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.events-page-number.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.events-page-arrow:disabled {
+  opacity: 0.3;
+}
+.events-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.events-logo-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}

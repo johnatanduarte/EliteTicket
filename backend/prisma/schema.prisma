@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ORGANIZER
+  CUSTOMER
+  STAFF
+}
+
+enum EventSource {
+  TICKETMASTER
+  TMDB
+}
+
+enum ReservationStatus {
+  PENDING
+  PAID
+  CANCELLED
+}
+
+enum TicketStatus {
+  VALID
+  USED
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role
+  createdAt DateTime @default(now())
+
+  events       Event[]
+  reservations Reservation[]
+}
+
+model Event {
+  id         String      @id @default(uuid())
+  title      String
+  source     EventSource
+  externalId String
+  date       DateTime
+  location   String
+  capacity   Int
+  price      Decimal
+
+  organizerId String
+  organizer   User   @relation(fields: [organizerId], references: [id])
+
+  reservations Reservation[]
+
+  createdAt DateTime @default(now())
+}
+
+model Reservation {
+  id       String            @id @default(uuid())
+  quantity Int
+  status   ReservationStatus @default(PENDING)
+
+  eventId String
+  event   Event  @relation(fields: [eventId], references: [id])
+
+  customerId String
+  customer   User   @relation(fields: [customerId], references: [id])
+
+  ticket Ticket?
+
+  createdAt DateTime @default(now())
+}
+
+model Ticket {
+  id      String       @id @default(uuid())
+  qrCode  String       @unique
+  status  TicketStatus @default(VALID)
+  usedAt  DateTime?
+
+  reservationId String      @unique
+  reservation   Reservation @relation(fields: [reservationId], references: [id])
+
+  createdAt DateTime @default(now())
+}

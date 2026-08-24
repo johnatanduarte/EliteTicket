@@ -1,0 +1,24 @@
+.ticket-card {
+  position: relative;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 4px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+  mask-image:
+    radial-gradient(circle 12px at 0 50%, transparent 12px, black 12.5px),
+    radial-gradient(circle 12px at 100% 50%, transparent 12px, black 12.5px);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+.ticket-divider {
+  border: none;
+  border-top: 2px dashed var(--border-punch);
+  margin: 1.5rem 0;
+}
+
+.ticket-card[onclick] {
+  cursor: pointer;
+}

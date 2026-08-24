@@ -1,0 +1,92 @@
+.not-found-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.not-found-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+}
+
+.not-found-logo-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.not-found-card {
+  position: relative;
+  padding: 2.8rem 2.2rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.not-found-stamp {
+  position: absolute;
+  top: 1.6rem;
+  right: -2.2rem;
+  transform: rotate(35deg);
+  background: transparent;
+  border: 3px solid var(--coral);
+  color: var(--coral);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 2.5rem;
+  opacity: 0.85;
+}
+
+.not-found-code {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.not-found-title {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  color: var(--ink);
+  margin-top: 0.4rem;
+  line-height: 1.1;
+}
+
+.not-found-message {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+.not-found-button {
+  display: inline-block;
+  margin-top: 1.6rem;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: 4px;
+  padding: 0.85rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.not-found-button:hover {
+  background: var(--gold-dark);
+  color: var(--paper);
+}

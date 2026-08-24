@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: eliteticket_db
+    restart: always
+    environment:
+      POSTGRES_USER: eliteticket
+      POSTGRES_PASSWORD: eliteticket
+      POSTGRES_DB: eliteticket
+    ports:
+      - "5433:5432"
+    volumes:
+      - eliteticket_pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    container_name: eliteticket_backend
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    command: sh -c "npx prisma generate && npm run dev"
+    depends_on:
+      - db
+
+volumes:
+  eliteticket_pgdata:

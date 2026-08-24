@@ -1,0 +1,85 @@
+.shared-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.shared-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+}
+
+.shared-card {
+  padding: 2.5rem 2rem;
+}
+
+.shared-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.shared-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.shared-status-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.shared-status-valid {
+  background: var(--moss);
+  color: var(--paper);
+}
+
+.shared-status-used {
+  background: var(--muted);
+  color: var(--paper);
+}
+
+.shared-meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+  text-transform: capitalize;
+}
+
+.shared-qr-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 0 0.5rem;
+}
+
+.shared-quantity {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.shared-status {
+  text-align: center;
+  margin-top: 3rem;
+  color: var(--muted);
+}
+
+.shared-status.error {
+  color: var(--coral);
+}
