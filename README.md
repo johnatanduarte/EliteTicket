@@ -150,6 +150,21 @@ Para inspecionar o banco visualmente, conecte um cliente como pgAdmin ou DBeaver
 
 ---
 
+## Contas de teste
+
+> Estas contas são criadas automaticamente ao rodar o [passo de seed](#como-rodar-o-projeto) (`docker compose exec backend npx prisma db seed`).
+
+| Papel | E-mail | Senha |
+|---|---|---|
+| Organizador | `organizador@teste.com` | `123456` |
+| Cliente | `cliente1@teste.com` | `123456` |
+| Cliente | `cliente2@teste.com` | `123456` |
+| Portaria | `portaria@teste.com` | `123456` |
+
+Ao fazer login, cada papel é redirecionado automaticamente para sua respectiva área: organizador → painel de eventos; portaria → tela de validação; cliente → listagem pública de eventos.
+
+---
+
 ## Fluxos principais
 
 1. **Organizador** cria um evento — manualmente ou buscando um show no catálogo da Ticketmaster, que pré-preenche título, data e local (capacidade e preço são sempre definidos manualmente).
