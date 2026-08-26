@@ -1,7 +1,9 @@
 import api from "./api";
 
-export async function listEvents({ search = '', page = 1 } = {}) {
-  const { data } = await api.get('/events', { params: { search, page } });
+export async function listEvents({ search = "", page = 1, pageSize = 6 } = {}) {
+  const { data } = await api.get("/events", {
+    params: { search, page, pageSize },
+  });
   return data;
 }
 
